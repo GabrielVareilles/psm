@@ -24,10 +24,12 @@ class NafJob < ApplicationRecord
   include PgSearch
   pg_search_scope :search_full_text, against: [
     :description,
+    :lvl5_desc,
     :lvl4_desc,
     :lvl3_desc,
     :lvl2_desc,
-    :lvl1_desc
+    :lvl1_desc,
+    :naf_code
   ],
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!

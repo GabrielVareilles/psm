@@ -12,11 +12,21 @@ Trestle.resource(:naf_jobs) do
   end
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do |record|
+    column 'NAF' do |record|
+      record.naf_code
+    end
+    column :description
+    column :lvl5_desc
+    # column :lvl4
+    column :lvl4_desc
+    # column :lvl3
+    column :lvl3_desc
+    # column :lvl2
+    column :lvl2_desc
+    # column :lvl1
+    column :lvl1_desc
+  end
 
   # Customize the form fields shown on the new/edit views.
   #
