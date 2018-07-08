@@ -3,7 +3,6 @@ require_relative '../lib/importers/job_importer.rb'
 
 # filepath    = 'db/data/naf.csv'
 # NafImporter.new.call(filepath)
-Job.destroy_all
 filepath = 'db/data/jobs.csv'
 JobImporter.new.call(filepath)
 
