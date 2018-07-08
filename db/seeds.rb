@@ -6,4 +6,4 @@ JobImporter.new.call(filepath)
 filepath    = 'db/data/naf.csv'
 NafImporter.new.call(filepath)
 
-# Administrator.create(email: "admin@psm.com", password: "petitcoeurboude")
+Administrator.create(email: "admin@psm.com", password: "petitcoeurboude")
