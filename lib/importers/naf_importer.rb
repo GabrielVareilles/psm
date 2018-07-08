@@ -3,8 +3,10 @@ require 'csv'
 class NafImporter
   def call(csv_file)
     csv_options = { col_sep: ';', headers: :first_row }
-
+    limit = 0
     CSV.foreach(csv_file, csv_options) do |row|
+      limit += 1
+      break if limit == 9000
       NafJob.create!(
         description: row['Metier'],
         naf_code: row['NAF'],
