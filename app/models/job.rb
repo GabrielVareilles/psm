@@ -12,4 +12,14 @@
 #
 
 class Job < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_full_text, against: [
+    :label,
+    :sector,
+    :activity_area,
+    :category
+  ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end
